@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Peace, Love and Pixels.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!--link here-->
+        <link rel="stylesheet" href="styles/stylecss">
+    </head>
+    <body>
+            <header role="banner">
+                <h1>HTML5 multimedia</h1>
+                    <span>The way forward!</span>
+                <nav role="navigation">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="js-api.html">js api</a></li>
+                        <li><a href="/">js canvas</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <main>
+            <article>
+                <section>                
+                    <header>
+                        <h2>video</h2>
+                    </header>
+                    <p>this section talks about video...</p>
+                    <video controls>
+                        <source src="../snowy-tree.mp4" width="300" height="176">
+                    </video>
+                    <canvas></canvas>
+                    <button id="snap" onclick="snap()">take a picture</button>
+                </section>
+                <section>
+                    <header>
+                        <h2>audio</h2>
+                    </header>
+                    <p>This section talks about audio...</p>
+                    <audio controls>
+                        <source src="../sayHello.ogg" type="audio/ogg">
+                        <source src="../sayHello.mp3" type="audio/mp3">
+                        Sorry, your browser doesn't support the audio element.
+                    </audio>
+                </section>
+            </article>
+        </main>
+        <div class="sidebar">
+            <header>
+                <h1>Twitter feed...</h1>
+            </header>
+        </div>
+        <div id="footer" role="contentinfo">
+            <small>Written by Joel Licklider</small>
+        </div>
+        <!--link here-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="application/javascript"></script>
+        
+        <script>
+                var video = document.querySelector('video');
+                var canvas = document.querySelector('canvas');
+                var context = canvas.getContext('2d');
+                var w, h, ratio;
+
+                video.addEventListener('loadedmetadata', function() {
+                    ratio = video.videoWidth / video.videoHeight;
+                    w = video.videoWidth - 100;
+                    h = parseInt(w / ratio, 10);
+                    canvas.width = w;
+                    canvase.height = h;
+                }, false);
+
+                function snap() {
+                    context.fillRect(0, 0, w, h);
+                    context.drawImage(video, 0, 0, w, h);
+                }
+            
+        </script>
+
+    </body>
+</html>

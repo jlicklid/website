@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Peace, Love and Pixels.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!--link here-->
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>HTML5 multimedia</h1>
+                <span>The way forward!</span>
+                <nav role="navigation">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="/">js api</a></li>
+                        <li><a href="js-canvas.html">js canvas</a></li>
+                    </ul>
+                </nav>
+        </header>
+        <main>
+            <article>
+                <section>                
+                    <header>
+                        <h2>video</h2>
+                    </header>
+                    <p>this section talks about video...</p>
+                    <video src="../snowy-tree.mp4" width="300" height="176" controls></video>
+                    <button id="video" type="button">check video time</button>
+                </section> 
+                <section>
+                    <header>
+                        <h2>audio</h2>
+                    </header>
+                    <p>This section talks about audio...</p>
+                    <audio controls>
+                        <source src="../sayHello.ogg" type="audio/ogg">
+                        <source src="../sayHello.mp3" type="audio/mp3">
+                        Sorry, your browser doesn't support the audio element.
+                    </audio>
+                </section>
+            </article>
+        </main>
+        <div id="footer" role="contentinfo">
+            <small>Written by Joel Licklider</small>
+        </div>
+        <!--link here-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="application/javascript"></script>
+       
+        <script>
+            document.getElementById("video").onclick = myFunction
+function myFunction() {
+var video = document.getElementsByTagName("video")[0];
+alert(video.currentTime);
+}
+        </script>
+
+    </body>
+</html>
